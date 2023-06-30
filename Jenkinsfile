@@ -10,5 +10,10 @@ pipeline {
                 sh "node_modules/jslint/bin/jslint.js server.js"
             }
         }
-    }                                           // End of the stages
+        stage('Code Compile') {
+            steps {
+                sh "npm install"
+            }
+        }
+    }                                           // End of the stages                                         
 }
