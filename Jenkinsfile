@@ -2,7 +2,7 @@
 
 pipeline {
     agent {  label 'WS' }
-    stages {                                 // Start of the stages
+    stages {                                     // Start of the stages
         stage('Lint Checks') {
             steps {
                 sh "echo Installing JSLint"
@@ -11,5 +11,5 @@ pipeline {
                 sh "node_modules/jslint/bin/jslint.js server.js"
             }
         }
-    }                                        // End of the stages
+    }                                           // End of the stages
 }
