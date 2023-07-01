@@ -1,3 +1,4 @@
 @Library('roboshop-shared-library') _
 
-nodejs("cart")
+env.COMPONENT="cart"                         // declaring a global variable
+nodejs()
