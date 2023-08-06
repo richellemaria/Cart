@@ -16,6 +16,7 @@ pipeline {
                     sh "ls -ltr"
                     sh "pwd"
                     sh "cd mutable-infra"   
+                    sh "ls -ltr"
                     sh "terrafile -f env-${ENV}/Terrafile"
                     sh "terraform init -backend-config=env-${ENV}/${ENV}-backend.tfvars"
             }
