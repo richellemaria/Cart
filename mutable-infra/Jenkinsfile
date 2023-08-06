@@ -11,6 +11,7 @@ pipeline {
     stages {
         stage('terraform init') {
             steps { 
+                    // When you intend to use any groovy commands or any syntax, enclose them inside scritp {}
                     script { git branch: 'main', url: 'https://github.com/b54-clouddevops/cart.git' }
                     sh "ls -ltr"
                     sh "pwd"   
