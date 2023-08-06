@@ -15,7 +15,7 @@ pipeline {
                     script { git branch: 'main', url: 'https://github.com/b54-clouddevops/cart.git' }
                     sh "ls -ltr"
                     sh "pwd"
-                    sh "cd mutable-infra"   
+                    sh "cd ${WORKSPACE}/mutable-infra"   
                     sh "ls -ltr"
                     sh "terrafile -f env-${ENV}/Terrafile"
                     sh "terraform init -backend-config=env-${ENV}/${ENV}-backend.tfvars"
