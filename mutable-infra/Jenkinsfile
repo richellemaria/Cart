@@ -11,7 +11,7 @@ pipeline {
     stages {
         stage('terraform init') {
             steps { 
-                    sh "git branch: 'main', url: 'https://github.com/b54-clouddevops/tf-module-mutable-app.git'"
+                    script { git branch: 'main', url: 'https://github.com/b54-clouddevops/tf-module-mutable-app.git' }
                     sh "ls -ltr"
                     sh "pwd"   
                     sh "terrafile -f env-${ENV}/Terrafile"
