@@ -14,20 +14,23 @@ pipeline {
                     // When you intend to use any groovy commands or any syntax, enclose them inside scritp {}
                     script { git branch: 'main', url: 'https://github.com/b54-clouddevops/cart.git' }
                     sh "ls -ltr"
-                    sh "pwd"   
+                    sh "pwd"
+                    sh "cd mutable-infra"   
                     sh "terrafile -f env-${ENV}/Terrafile"
                     sh "terraform init -backend-config=env-${ENV}/${ENV}-backend.tfvars"
             }
         }
 
         stage('terraform plan') {
-            steps {    
+            steps { 
+                    sh "cd mutable-infra" 
                     sh "terraform plan -var-file=env-${ENV}/${ENV}.tfvars"
             }
         }
 
         stage('terraform apply') {
-            steps {    
+            steps { 
+                    sh "cd mutable-infra" 
                     sh "terraform ${ACTION} -auto-approve -var-file=env-${ENV}/${ENV}.tfvars"
             }
         }
