@@ -1,5 +1,7 @@
 # terraform-databases
 
 ```
-This is the root module which calls all the 4 databases, all the databases that will be created in future will be called from here.
+This is the root module to create CART Infrastructure on EC2 with Mutable Approach.
+
+All the backend code will be sourced from the remote repo " tf-module-mutable-app"
 ```
