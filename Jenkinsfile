@@ -2,5 +2,5 @@
 
 env.COMPONENT="cart"
 env.APP_TYPE="nodejs"
-// nodejs()
-docker()
+// nodejs()                        // Use this for servers
+docker()                           // Use this for building containre image and push it to ecr
