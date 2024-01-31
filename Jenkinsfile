@@ -1,6 +1,17 @@
-@Library('roboshop-shared-library') _
+pipeline{
+  agent {
+      label 'WS'
+  }
+  stages{
+    stage('Lint Check'){
+        steps{
+            sh "echo installing jslint"
+            sh "npm i jslint"
+            sh "ls -ltr node_modules/jslint/bin/"
+            sh "node_modules/jslint/bin/jslint.js server.js"
+        }
+    }
 
-env.COMPONENT="cart"
-env.APP_TYPE="nodejs"
-// nodejs()                        // Use this for servers
-docker()                           // Use this for building containre image and push it to ecr
+  }
+
+}    
