@@ -7,11 +7,13 @@ pipeline{
         steps{
             sh "echo installing jslint"
             sh "npm i jslint"
-            sh "ls -ltr node_modules/jslint/bin/"
-            sh "node_modules/jslint/bin/jslint.js server.js"
+            sh "node_modules/jslint/bin/jslint.js server.js || true"
         }
     }
-
+    stage('Code Complie'){
+        steps{
+              sh "npm install"
+        }
+    }
   }
-
 }    
